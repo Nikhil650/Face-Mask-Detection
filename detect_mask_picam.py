@@ -81,7 +81,7 @@ while True:
 		(mask, withoutMask) = pred
 
 		if mask > withoutMask:
-			label = "Thank You. Mask On."
+			label = "Mask On."
 			color = (0, 255, 0)
 
 		else:
