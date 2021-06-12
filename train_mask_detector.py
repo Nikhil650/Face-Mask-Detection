@@ -59,7 +59,6 @@ labels = to_categorical(labels)
 (trainX, testX, trainY, testY) = train_test_split(data, labels,
 	test_size=0.20, stratify=labels, random_state=42)
 
-
 aug = ImageDataGenerator(
 	rotation_range=20,
 	zoom_range=0.15,

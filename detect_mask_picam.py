@@ -1,4 +1,3 @@
-
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
@@ -11,7 +10,6 @@ import cv2
 import os
 
 def detect_and_predict_mask(frame, faceNet, maskNet):
-	
 	(h, w) = frame.shape[:2]
 	blob = cv2.dnn.blobFromImage(frame, 1.0, (300, 300),
 		(104.0, 177.0, 123.0))
@@ -69,7 +67,6 @@ print("[INFO] loading face mask detector model...")
 maskNet = load_model(args["model"])
 
 print("[INFO] starting video stream...")
-
 vs = VideoStream(usePiCamera=True).start()
 time.sleep(2.0)
 
@@ -95,9 +92,9 @@ while True:
 			cv2.FONT_HERSHEY_SIMPLEX, 0.7, color, 2)
 		cv2.rectangle(frame, (startX, startY), (endX, endY), color, 2)
 
-
 	cv2.imshow("Face Mask Detector", frame)
 	key = cv2.waitKey(1) & 0xFF
+
 	if key == ord("q"):
 		break
 
